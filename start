@@ -1,0 +1,57 @@
+@echo off
+
+:start
+cls
+echo Выберите операцию:
+echo 1. Сложение
+echo 2. Вычитание
+echo 3. Умножение
+echo 4. Деление
+set /p choice="Ваш выбор: "
+
+if "%choice%"=="1" goto add
+if "%choice%"=="2" goto subtract
+if "%choice%"=="3" goto multiply
+if "%choice%"=="4" goto divide
+goto start
+
+:add
+cls
+set /p num1="Первое число: "
+set /p num2="Второе число: "
+set /a result=%num1% + %num2%
+echo Результат: %result%
+pause
+goto start
+
+:subtract
+cls
+set /p num1="Первое число: "
+set /p num2="Второе число: "
+set /a result=%num1% - %num2%
+echo Результат: %result%
+pause
+goto start
+
+:multiply
+cls
+set /p num1="Первое число: "
+set /p num2="Второе число: "
+set /a result=%num1% * %num2%
+echo Результат: %result%
+pause
+goto start
+
+:divide
+cls
+set /p num1="Первое число: "
+set /p num2="Второе число: "
+if %num2%==0 (
+    echo Ошибка: деление на ноль!
+    pause
+    goto start
+)
+set /a result=%num1% / %num2%
+echo Результат: %result%
+pause
+goto start
